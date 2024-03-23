@@ -6,11 +6,14 @@ import tkinter as tk
 from tkinter import filedialog
 from moviepy.editor import VideoFileClip
 
+
 class VideoPlayerApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Video Player")
-        
+
+        self.play_button = None
+        self.open_button = None
         self.video_clip = None
         self.playing = False
         
@@ -39,11 +42,13 @@ class VideoPlayerApp:
                 self.video_clip.close()
                 self.playing = False
 
+
 def main():
     root = tk.Tk()
     root.geometry("400x300")
     VideoPlayerApp(root)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
